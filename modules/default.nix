@@ -5,6 +5,7 @@
     ./system.nix
     ./pipewire.nix
     ./bluetooth.nix
+    ./fonts.nix
     ./programs
   ];
 }

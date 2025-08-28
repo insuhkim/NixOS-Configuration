@@ -28,11 +28,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    noto-fonts-cjk-sans
-  ];
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 }
