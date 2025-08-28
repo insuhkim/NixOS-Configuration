@@ -14,7 +14,7 @@
   imports = [
     ./hosts/lenovo-yoga
   ];
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "yoga"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
