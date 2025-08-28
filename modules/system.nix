@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -18,11 +18,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
-    nixd
-    nixfmt-rfc-style
+    neovim
   ];
+
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Set default shell to ZSH
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 }
