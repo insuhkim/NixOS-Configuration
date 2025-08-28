@@ -5,6 +5,12 @@
   # manage.
   home.username = "insuhkim";
   home.homeDirectory = "/home/insuhkim";
+  imports = [
+    ./git.nix
+    ./shell.nix
+    ./zed.nix
+    ./obsidian.nix
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -68,7 +74,6 @@
   #  /etc/profiles/per-user/insuhkim/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.
