@@ -27,6 +27,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.insuhkim = import ./home;
               home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.backupFileExtension = "hm.old";
             }
           ];
         };
