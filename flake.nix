@@ -19,8 +19,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./configuration.nix
-            ./modules
+            ./hosts/lenovo-yoga
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

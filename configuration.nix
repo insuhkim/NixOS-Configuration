@@ -11,9 +11,6 @@
 }:
 
 {
-  imports = [
-    ./hosts/lenovo-yoga
-  ];
   networking.hostName = "yoga"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
