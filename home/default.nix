@@ -10,6 +10,7 @@
     ./shell.nix
     ./zed.nix
     ./obsidian.nix
+    ./kitty.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
