@@ -1,5 +1,6 @@
 {
   imports = [
+    ./user.nix
     ./KDE.nix
     ./boot.nix
     ./system.nix

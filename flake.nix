@@ -10,6 +10,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      userName = "insuhkim";
       # pkgs = nixpkgs.legacyPackages.${system};
       #       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in
@@ -17,27 +18,20 @@
       nixosConfigurations = {
         yoga = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs userName; };
           modules = [
             ./hosts/lenovo-yoga
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.insuhkim = import ./home;
-              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users."${userName}" = import ./home;
+              home-manager.extraSpecialArgs = { inherit inputs userName; };
               home-manager.backupFileExtension = "hm.old";
             }
           ];
         };
       };
-
-      #   homeConfigurations = {
-      #     insuhkim = home-manager.lib.homeManagerConfiguration {
-      #       inherit pkgs;
-      #       modules = [ ./home.nix ];
-      #     };
-      #   };
     };
 
   inputs = {

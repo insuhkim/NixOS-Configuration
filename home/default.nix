@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
-
+{ userName, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "insuhkim";
-  home.homeDirectory = "/home/insuhkim";
+  home.username = userName;
+  home.homeDirectory = "/home/${userName}";
   imports = [
     ./git.nix
     ./shell.nix
