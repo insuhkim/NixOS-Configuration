@@ -1,6 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
-
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -11,6 +10,7 @@
 
       zed = "zeditor";
       ls = "eza --icons=auto";
+      lt = "eza --icons=auto --tree --level=2";
       ff = "fastfetch";
       cat = "bat";
       grep = "rg";
@@ -24,20 +24,45 @@
     history.size = 10000;
     history.ignoreAllDups = true;
     history.path = "$HOME/.zsh_history";
-    # prezto = {
-    #   enable = true;
-    # };
-    oh-my-zsh = {
+    prezto = {
       enable = true;
-      plugins = [
-        "git" # also requires `programs.git.enable = true;`
-        "zoxide"
+      editor.keymap = "vi";
+      pmodules = [
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "spectrum"
+        "utility"
+        "completion"
+        "prompt"
       ];
-      theme = "robbyrussell";
+      # pmoduleDirs = [ "${config.home.homeDirectory}/.zprezto-contrib" ];
+      # prompt = {
+      #   theme = "agnoster";
+      #   # pwdLength = "long";
+      #   showReturnVal = true;
+      # };
     };
+
+    # antidote = { enable = true; plugins = [ "zsh-users/zsh-autosuggestions" "zsh-users/zsh-syntax-highlighting" "zsh-users/zsh-completions" "mattmc3/ez-compinit" "aloxaf/fzf-tab" # "romkatv/powerlevel10k" ]; };
+    #
+    # oh-my-zsh = { enable = true; plugins = [ "git" "zoxide" ]; theme = "robbyrussell"; };
   };
   programs.pay-respects = {
     enable = true;
+  };
+
+  # programs.tmux.enable = true;
+  programs.zellij = {
+    enable = true;
+    # enableZshIntegration = true;
+    # exitShellOnExit = true;
+    #
+    # settings = {
+    #   theme = "catppuccin-frappe";
+    # };
   };
 
   programs.neovim = {
@@ -48,6 +73,10 @@
   programs.fastfetch = {
     enable = true;
   };
+  programs.oh-my-posh = {
+    enable = true;
+  };
+  programs.zoxide.enable = true;
   programs.lazygit.enable = true;
   home.packages = with pkgs; [
     fortune
@@ -60,7 +89,10 @@
     nix-tree
 
     ripgrep
+    dust
     btop
+    fd
+    fzf
     tldr
     yazi
     bat
