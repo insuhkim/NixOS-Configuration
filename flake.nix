@@ -11,6 +11,7 @@
     let
       system = "x86_64-linux";
       userName = "insuhkim";
+
       # pkgs = nixpkgs.legacyPackages.${system};
       #       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in
@@ -21,7 +22,23 @@
           specialArgs = { inherit inputs userName; };
           modules = [
             ./hosts/lenovo-yoga
-            home-manager.nixosModules.home-manager
+             home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."${userName}" = import ./home;
+              home-manager.extraSpecialArgs = { inherit inputs userName; };
+              home-manager.backupFileExtension = "hm.old";
+            }
+          ];
+        };
+
+        old-laptop =  nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs userName; };
+          modules = [
+            ./hosts/old-laptop
+             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
