@@ -11,7 +11,6 @@
     ./obsidian.nix
     ./kitty.nix
     ./zen-browser.nix
-    ./btop.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
