@@ -7,6 +7,7 @@
     ./pipewire.nix
     ./bluetooth.nix
     ./fonts.nix
+    ./variables.nix
     ./programs
   ];
 }
