@@ -101,7 +101,11 @@
   programs.tealdeer.enable = true;
   programs.zoxide.enable = true;
   programs.lazygit.enable = true;
-  programs.git.delta.enable = true;
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+  };
+
   programs.eza = {
     enable = true;
     icons = "auto";
