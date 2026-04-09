@@ -11,6 +11,7 @@
     ./obsidian.nix
     ./kitty.nix
     ./zen-browser.nix
+    ./plasma-manager.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
