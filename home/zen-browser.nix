@@ -1,6 +1,11 @@
-{ pkgs, inputs, ... }:
+{ inputs, ... }:
 {
-  home.packages = with pkgs; [
-    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
+  imports = [
+    inputs.zen-browser.homeModules.beta
   ];
+
+  programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+  };
 }
