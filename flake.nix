@@ -23,7 +23,7 @@
           specialArgs = { inherit inputs userName; };
           modules = [
             ./hosts/lenovo-yoga
-             home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -34,12 +34,12 @@
           ];
         };
 
-        old-laptop =  nixpkgs.lib.nixosSystem {
+        old-laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs userName; };
           modules = [
             ./hosts/old-laptop
-             home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -53,17 +53,14 @@
     };
 
   inputs = {
-    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
 
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager-stable.url = "github:nix-community/home-manager/release-25.05";
+    home-manager-stable.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

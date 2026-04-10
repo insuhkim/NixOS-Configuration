@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -6,6 +6,31 @@
 
     ./../../modules
   ];
+
+  # Enable custom modules
+  base = {
+    system = {
+      boot.enable = true;
+      console.enable = true;
+      fonts.enable = true;
+      user.enable = true;
+      variables.enable = true;
+    };
+    audio.pipewire.enable = true;
+    bluetooth.enable = true;
+    desktop.kde.enable = true;
+    programs = {
+      steam.enable = true;
+      nixtools.enable = true;
+      webcord.enable = true;
+      tailscale.enable = true;
+    };
+  };
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    KillUserProcesses = false;
+  };
 
   networking.hostName = "old-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -50,7 +75,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

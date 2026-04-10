@@ -1,36 +1,46 @@
+{ lib, config, ... }:
+let
+  cfg = config.myHome.programs.git;
+in
 {
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "insuhkim";
-      user.email = "insuhkim@naver.com";
+  options.myHome.programs.git = {
+    enable = lib.mkEnableOption "Enable git configuration";
+  };
 
-      init.defaultBranch = "main";
-      pull.rebase = true;
-      push.default = "current";
-      merge.conflictStyle = "zdiff3";
-      diff.algorithm = "histogram";
-      diff.colorMoved = "default";
-      column.ui = "auto";
-      branch.sort = "-committerdate";
-      push.autoSetupRemote = true;
-      rerere.enabled = true;
+  config = lib.mkIf cfg.enable {
+    programs.git = {
+      enable = true;
+      settings = {
+        user.name = "insuhkim";
+        user.email = "insuhkim@naver.com";
 
-      alias = {
-        co = "checkout";
-        ci = "commit";
-        st = "status -sb";
-        br = "branch";
-        amend = "commit --amend";
-        # ac = "add -A && commit -m";
-        ac = "commit -am";
-        unstage = "reset HEAD --";
-        aliases = "!git config --get-regexp ^alias\\. | sed -e 's/^alias\\.//' -e 's/ / = /'";
-        pushforce = "push --force-with-lease";
-        branches = "branch -a";
-        hist = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-        type = "cat-file -t";
-        dump = "cat-file -p";
+        init.defaultBranch = "main";
+        pull.rebase = true;
+        push.default = "current";
+        merge.conflictStyle = "zdiff3";
+        diff.algorithm = "histogram";
+        diff.colorMoved = "default";
+        column.ui = "auto";
+        branch.sort = "-committerdate";
+        push.autoSetupRemote = true;
+        rerere.enabled = true;
+
+        alias = {
+          co = "checkout";
+          ci = "commit";
+          st = "status -sb";
+          br = "branch";
+          amend = "commit --amend";
+          # ac = "add -A && commit -m";
+          ac = "commit -am";
+          unstage = "reset HEAD --";
+          aliases = "!git config --get-regexp ^alias\\. | sed -e 's/^alias\\.//' -e 's/ / = /'";
+          pushforce = "push --force-with-lease";
+          branches = "branch -a";
+          hist = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+          type = "cat-file -t";
+          dump = "cat-file -p";
+        };
       };
     };
   };

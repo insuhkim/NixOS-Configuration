@@ -1,10 +1,23 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.base.programs.nixtools;
+in
+{
+  options.base.programs.nixtools = {
+    enable = lib.mkEnableOption "Enable nix tools";
+  };
 
-  environment.systemPackages = with pkgs; [
-    nixd
-    nixfmt-rfc-style
-    nix-output-monitor
-    # nh
-  ];
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      nixd
+      nixfmt-rfc-style
+      nix-output-monitor
+      nh
+    ];
+  };
 }

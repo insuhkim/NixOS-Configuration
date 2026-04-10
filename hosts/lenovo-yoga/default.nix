@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -6,6 +6,26 @@
 
     ./../../modules
   ];
+
+  # Enable custom modules
+  base = {
+    system = {
+      boot.enable = true;
+      console.enable = true;
+      fonts.enable = true;
+      user.enable = true;
+      variables.enable = true;
+    };
+    audio.pipewire.enable = true;
+    bluetooth.enable = true;
+    desktop.kde.enable = true;
+    programs = {
+      steam.enable = true;
+      nixtools.enable = true;
+      webcord.enable = true;
+      tailscale.enable = true;
+    };
+  };
 
   networking.hostName = "yoga"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

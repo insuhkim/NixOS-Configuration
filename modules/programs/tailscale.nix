@@ -1,5 +1,14 @@
+{ lib, config, ... }:
+let
+  cfg = config.base.programs.tailscale;
+in
 {
-  services.tailscale.enable = true;
+  options.base.programs.tailscale = {
+    enable = lib.mkEnableOption "Enable tailscale";
+  };
 
-  services.tailscale.useRoutingFeatures = "client";
+  config = lib.mkIf cfg.enable {
+    services.tailscale.enable = true;
+    services.tailscale.useRoutingFeatures = "client";
+  };
 }

@@ -1,10 +1,18 @@
-{ ... }:
+{ lib, config, ... }:
+let
+  cfg = config.base.programs.steam;
+in
 {
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  options.base.programs.steam = {
+    enable = lib.mkEnableOption "Enable steam";
   };
 
+  config = lib.mkIf cfg.enable {
+    programs.steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    };
+  };
 }

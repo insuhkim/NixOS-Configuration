@@ -1,46 +1,44 @@
-{ pkgs, ... }:
 {
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk
-      fcitx5-hangul
-    ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  cfg = config.base.desktop.kde;
+in
+{
+  options.base.desktop.kde = {
+    enable = lib.mkEnableOption "Enable KDE Plasma Desktop";
   };
 
-  environment.systemPackages = with pkgs; [ wl-clipboard ];
-
-  programs.kdeconnect.enable = true;
-  networking.firewall =
-    let
-      allowedRange = {
-        from = 1714;
-        to = 1764;
-      };
-    in
-    {
-      allowedTCPPortRanges = [ allowedRange ];
-      allowedUDPPortRanges = [ allowedRange ];
+  config = lib.mkIf cfg.enable {
+    i18n.inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-gtk
+        fcitx5-hangul
+      ];
     };
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+    environment.systemPackages = with pkgs; [ wl-clipboard ];
 
-  # # Enable the X11 windowing system.
-  # # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
+    programs.kdeconnect.enable = true;
+    networking.firewall =
+      let
+        allowedRange = {
+          from = 1714;
+          to = 1764;
+        };
+      in
+      {
+        allowedTCPPortRanges = [ allowedRange ];
+        allowedUDPPortRanges = [ allowedRange ];
+      };
 
-  # # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "us";
-  #   variant = "";
-  # };
-
-  # # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+    # Enable the KDE Plasma Desktop Environment.
+    services.displayManager.sddm.enable = true;
+    services.desktopManager.plasma6.enable = true;
+  };
 }
