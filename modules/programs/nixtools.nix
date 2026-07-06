@@ -15,7 +15,7 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       nixd
-      nixfmt-rfc-style
+      nixfmt
       nix-output-monitor
       nh
     ];
