@@ -13,7 +13,6 @@
       boot.enable = true;
       console.enable = true;
       fonts.enable = true;
-      user.enable = true;
     };
     audio.pipewire.enable = true;
     bluetooth.enable = true;
