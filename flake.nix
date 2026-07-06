@@ -1,54 +1,28 @@
 {
-  description = "A very basic flake";
+  description = "Insuh's NixOS configuration";
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      plasma-manager,
-      ...
-    }@inputs:
+    inputs@{ nixpkgs, ... }:
     let
       system = "x86_64-linux";
       userName = "insuhkim";
 
-      # pkgs = nixpkgs.legacyPackages.${system};
-      #       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations = {
-        yoga = nixpkgs.lib.nixosSystem {
+      mkHost =
+        hostPath:
+        nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs userName; };
           modules = [
-            ./hosts/lenovo-yoga
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${userName}" = import ./home;
-              home-manager.extraSpecialArgs = { inherit inputs userName; };
-              home-manager.backupFileExtension = "hm.old";
-            }
+            hostPath
+            ./hosts/common.nix
           ];
         };
 
-        old-laptop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs userName; };
-          modules = [
-            ./hosts/old-laptop
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."${userName}" = import ./home;
-              home-manager.extraSpecialArgs = { inherit inputs userName; };
-              home-manager.backupFileExtension = "hm.old";
-            }
-          ];
-        };
+    in
+    {
+      nixosConfigurations = {
+        yoga = mkHost ./hosts/lenovo-yoga;
+        old-laptop = mkHost ./hosts/old-laptop;
       };
     };
 
