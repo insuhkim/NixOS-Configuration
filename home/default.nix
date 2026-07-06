@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/${userName}";
 
   imports = [
+    ./mango
     ./git.nix
     ./shell
     ./zed.nix

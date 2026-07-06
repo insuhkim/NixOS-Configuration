@@ -1,6 +1,6 @@
 {
   imports = [
-    ./KDE.nix
+    ./desktop
     ./boot.nix
     ./console.nix
     ./pipewire.nix
