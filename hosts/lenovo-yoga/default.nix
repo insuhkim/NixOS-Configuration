@@ -14,7 +14,6 @@
       console.enable = true;
       fonts.enable = true;
       user.enable = true;
-      variables.enable = true;
     };
     audio.pipewire.enable = true;
     bluetooth.enable = true;
