@@ -6,7 +6,7 @@
 
   imports = [
     ./git.nix
-    ./shell.nix
+    ./shell
     ./zed.nix
     ./obsidian.nix
     ./kitty.nix
@@ -23,11 +23,11 @@
       kitty.enable = true;
       zenBrowser.enable = true;
     };
-    shell.enable = true;
     desktop.plasma.enable = true;
   };
 
   programs.gemini-cli.enable = true;
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
