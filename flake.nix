@@ -58,6 +58,8 @@
       url = "github:noctalia-dev/noctalia/cachix";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 
   nixConfig = {
