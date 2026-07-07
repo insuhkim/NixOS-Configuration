@@ -7,12 +7,12 @@
   imports = [
     ./mango
     ./git.nix
-    ./shell
+    ./terminal
     ./zed.nix
     ./obsidian.nix
-    ./kitty.nix
     ./zen-browser.nix
     ./plasma-manager.nix
+    ./zsh.nix
   ];
 
   # Enable custom Home Manager modules

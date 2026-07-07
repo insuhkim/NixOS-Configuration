@@ -5,16 +5,6 @@
     enable = true;
   };
 
-  # Editors
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
-  };
-
-  # Prompt
-  programs.oh-my-posh.enable = true;
-
   # CLI tools and fun utilities
   home.packages = with pkgs; [
     fortune

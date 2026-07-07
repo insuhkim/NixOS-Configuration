@@ -1,4 +1,8 @@
 {
+  # Prompt
+  programs.oh-my-posh.enable = true;
+
+  # ZSH
   programs.zsh = {
     enable = true;
     shellAliases = {
