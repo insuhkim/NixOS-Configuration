@@ -7,6 +7,7 @@
     ./bluetooth.nix
     ./fonts.nix
     ./variables.nix
+    ./power.nix
     ./programs
   ];
 }

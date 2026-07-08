@@ -17,6 +17,7 @@
     audio.pipewire.enable = true;
     bluetooth.enable = true;
     desktop.kde.enable = true;
+    power-management.enable = true;
     programs = {
       steam.enable = true;
       nixtools.enable = true;
@@ -52,10 +53,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  # Enable TLP battery management
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
