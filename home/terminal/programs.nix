@@ -56,11 +56,6 @@
 
   programs.btop = {
     enable = true;
-    settings = {
-      color_theme = "tokyo-storm";
-      vim_keys = true;
-      update_ms = 1000;
-      proc_tree = true;
-    };
+    # settings = { color_theme = "tokyo-storm"; vim_keys = true; update_ms = 1000; proc_tree = true; };
   };
 }
