@@ -1,0 +1,20 @@
+# Nix / NixOS build outputs & direnv
+result
+result-*
+.direnv/
+.envrc.local
+
+# Secrets & sensitive credentials
+*.secret
+*.key
+*.pem
+secrets/
+*.age
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
