@@ -12,7 +12,6 @@
     ./obsidian.nix
     ./zen-browser.nix
     ./plasma-manager.nix
-    ./zsh.nix
   ];
 
   # Enable custom Home Manager modules

@@ -31,9 +31,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Set default shell to ZSH
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
+  # # Set default shell to ZSH
+  # users.defaultUserShell = pkgs.zsh;
+  # programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userName} = {
