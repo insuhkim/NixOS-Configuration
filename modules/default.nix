@@ -9,6 +9,6 @@
     ./variables.nix
     ./power.nix
     ./programs
-    ./shell.nix
+    ./terminal.nix
   ];
 }
