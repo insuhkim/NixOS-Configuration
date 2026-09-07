@@ -16,7 +16,8 @@
     };
     audio.pipewire.enable = true;
     bluetooth.enable = true;
-    desktop.kde.enable = true;
+    # desktop.kde.enable = true;
+    desktop.mango.enable = true;
     power-management.enable = true;
     programs = {
       steam.enable = true;
