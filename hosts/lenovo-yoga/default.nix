@@ -20,7 +20,6 @@
     power-management.enable = true;
     programs = {
       steam.enable = true;
-      nixtools.enable = true;
       webcord.enable = true;
       tailscale.enable = true;
     };

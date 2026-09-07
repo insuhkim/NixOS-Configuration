@@ -19,5 +19,7 @@
     # oneko
 
     dust btop delta eza fastfetch fd fzf ripgrep tealdeer zellij
+
+    nixd nixfmt nix-output-monitor nh nix-tree devenv
   ];
 }
