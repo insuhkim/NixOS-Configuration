@@ -25,6 +25,8 @@
     gui = {
       steam.enable = true;
       webcord.enable = true;
+      readest.enable = true;
+      localsend.enable = true;
     };
     cli = {
       terminal.enable = true;
