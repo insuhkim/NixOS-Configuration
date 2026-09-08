@@ -5,5 +5,6 @@
     ./readest.nix
     ./localsend.nix
     ./ferdium.nix
+    ./qutebrowser.nix
   ];
 }
