@@ -39,6 +39,7 @@ in
       nixd nixfmt nix-output-monitor nh nix-tree devenv
 
       antigravity-cli
+      neovim
     ];
   };
 }
