@@ -12,9 +12,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.localsend.enable = true;
-
-    networking.firewall.allowedTCPPorts = [ 53317 ];
-    networking.firewall.allowedUDPPorts = [ 53317 ];
+    programs.localsend = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 }
