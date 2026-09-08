@@ -34,12 +34,10 @@
     in
     {
       nixosConfigurations = {
-        yoga = mkHost ./hosts/lenovo-yoga;
         old-laptop = mkHost ./hosts/old-laptop;
       };
       homeConfigurations = {
         ${userName} = mkHome ./home;
-        "${userName}@yoga" = mkHome ./home;
         "${userName}@old-laptop" = mkHome ./home;
       };
     };
