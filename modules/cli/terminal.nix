@@ -18,6 +18,8 @@ in
       blesh.enable = true;
     };
 
+    programs.nix-index-database.comma.enable = true;
+
     programs.starship.enable = true;
 
     programs.zoxide.enable = true;
