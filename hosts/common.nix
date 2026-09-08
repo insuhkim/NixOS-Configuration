@@ -6,7 +6,6 @@
 }:
 {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
   ];
 
   # Core system settings that are always enabled when this module is imported
@@ -26,6 +25,7 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
+    inputs.home-manager.packages.${pkgs.system}.default
   ];
 
   # Allow unfree packages
@@ -44,14 +44,5 @@
       "wheel"
     ];
     packages = [ ];
-  };
-
-  # Home Manager configuration
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.${userName} = import ../home;
-    extraSpecialArgs = { inherit inputs userName; };
-    backupFileExtension = "hm.old";
   };
 }

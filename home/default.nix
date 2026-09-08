@@ -4,6 +4,8 @@
   home.username = userName;
   home.homeDirectory = "/home/${userName}";
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./mango
     ./git.nix

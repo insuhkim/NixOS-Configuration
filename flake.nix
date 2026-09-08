@@ -18,11 +18,29 @@
           ];
         };
 
+      mkHome =
+        homePath:
+        inputs.home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = { inherit inputs userName; };
+          modules = [
+            homePath
+          ];
+        };
+
     in
     {
       nixosConfigurations = {
         yoga = mkHost ./hosts/lenovo-yoga;
         old-laptop = mkHost ./hosts/old-laptop;
+      };
+      homeConfigurations = {
+        ${userName} = mkHome ./home;
+        "${userName}@yoga" = mkHome ./home;
+        "${userName}@old-laptop" = mkHome ./home;
       };
     };
 
