@@ -32,7 +32,7 @@ in
       # sl # aalib # libcaca
       # oneko
 
-      dust btop delta eza fastfetch fd fzf ripgrep tealdeer zellij
+      dust btop delta eza fastfetch fd fzf gh ripgrep tealdeer zellij
 
       nixd nixfmt nix-output-monitor nh nix-tree devenv
 
