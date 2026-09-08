@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.base.power-management;
+  cfg = config.base.system.power;
 in
 {
-  options.base.power-management = {
+  options.base.system.power = {
     enable = lib.mkEnableOption "Enable power management";
   };
 

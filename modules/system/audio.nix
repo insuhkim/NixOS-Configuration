@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.base.audio.pipewire;
+  cfg = config.base.system.audio.pipewire;
 in
 {
-  options.base.audio.pipewire = {
+  options.base.system.audio.pipewire = {
     enable = lib.mkEnableOption "Enable pipewire audio";
   };
 

@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.base.programs.tailscale;
+  cfg = config.base.system.tailscale;
 in
 {
-  options.base.programs.tailscale = {
+  options.base.system.tailscale = {
     enable = lib.mkEnableOption "Enable tailscale";
   };
 

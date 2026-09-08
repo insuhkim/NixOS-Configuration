@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.base.programs.webcord;
+  cfg = config.base.gui.webcord;
 in
 {
-  options.base.programs.webcord = {
+  options.base.gui.webcord = {
     enable = lib.mkEnableOption "Enable webcord";
   };
 

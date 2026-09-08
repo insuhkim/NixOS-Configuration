@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.base.bluetooth;
+  cfg = config.base.system.bluetooth;
 in
 {
-  options.base.bluetooth = {
+  options.base.system.bluetooth = {
     enable = lib.mkEnableOption "Enable bluetooth";
   };
 

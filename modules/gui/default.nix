@@ -2,6 +2,6 @@
   imports = [
     ./steam.nix
     ./webcord.nix
-    ./tailscale.nix
+    ./readest.nix
   ];
 }

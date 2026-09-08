@@ -6,17 +6,18 @@
   ...
 }:
 let
-  cfg = config.base.programs.steam;
+  cfg = config.base.gui.steam;
 in
 {
-  options.base.programs.steam = {
+  options.base.gui.steam = {
     enable = lib.mkEnableOption "Enable steam";
   };
 
   config = lib.mkIf cfg.enable {
 
     environment.systemPackages = with pkgs; [
-      steam-run
+      # steam-run
+      # hydralauncher
     ];
 
     nixpkgs.overlays = [

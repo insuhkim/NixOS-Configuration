@@ -13,15 +13,20 @@
       boot.enable = true;
       console.enable = true;
       fonts.enable = true;
+      audio.pipewire.enable = true;
+      bluetooth.enable = true;
+      power.enable = true;
+      tailscale.enable = true;
     };
-    audio.pipewire.enable = true;
-    bluetooth.enable = true;
-    desktop.kde.enable = true;
-    power-management.enable = true;
-    programs = {
+    desktop = {
+      kde.enable = true;
+    };
+    gui = {
       steam.enable = true;
       webcord.enable = true;
-      tailscale.enable = true;
+    };
+    cli = {
+      terminal.enable = true;
     };
   };
 
