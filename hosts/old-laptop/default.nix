@@ -17,6 +17,7 @@
       bluetooth.enable = true;
       power.enable = true;
       tailscale.enable = true;
+      envfs.enable = true;
       lix.enable = true;
     };
     desktop = {
