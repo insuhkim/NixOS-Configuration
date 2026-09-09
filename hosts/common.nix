@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   userName,
   ...
 }:
@@ -25,7 +24,6 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
-    inputs.home-manager.packages.${pkgs.system}.default
   ];
 
   # Allow unfree packages
