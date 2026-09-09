@@ -8,5 +8,6 @@
     ./power.nix
     ./tailscale.nix
     ./variables.nix
+    ./lix.nix
   ];
 }
