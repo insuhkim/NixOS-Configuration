@@ -17,6 +17,7 @@
       bluetooth.enable = true;
       power.enable = true;
       tailscale.enable = true;
+      lix.enable = true;
     };
     desktop = {
       # kde.enable = true;
