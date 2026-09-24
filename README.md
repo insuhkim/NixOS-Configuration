@@ -66,6 +66,15 @@ Or target host-specific definition:
 home-manager switch --flake .#insuhkim@old-laptop
 ```
 
+### Nix-on-Droid
+
+Build and activate the Android/Termux profile, including its Home Manager
+configuration:
+
+```bash
+nix-on-droid switch --flake .#default
+```
+
 ### Flake Evaluation Check
 
 Verify that all NixOS and Home Manager outputs evaluate properly:
