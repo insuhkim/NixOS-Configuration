@@ -15,7 +15,6 @@
           modules = [
             hostPath
             ./hosts/common.nix
-            ./hjem
           ];
         };
 
@@ -81,11 +80,6 @@
 
     mangowm = {
       url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hjem = {
-      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
