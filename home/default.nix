@@ -8,7 +8,6 @@
 
   imports = [
     ./dotfiles
-    ./mango
     ./git.nix
     ./terminal
     ./zed.nix
