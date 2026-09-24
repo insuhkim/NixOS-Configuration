@@ -78,11 +78,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 }

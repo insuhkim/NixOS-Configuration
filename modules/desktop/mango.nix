@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 let
@@ -12,8 +11,6 @@ in
   options.base.desktop.mango = {
     enable = lib.mkEnableOption "Enable Mango Window Manager";
   };
-
-  imports = [ inputs.mangowm.nixosModules.mango ];
 
   config = lib.mkIf cfg.enable {
 
