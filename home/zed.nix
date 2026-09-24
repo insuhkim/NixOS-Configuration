@@ -13,6 +13,7 @@ in
       userSettings = {
         terminal = {
           font_size = 15;
+          font_family = "JetBrainsMono Nerd Font";
         };
         buffer_line_height = "comfortable";
         buffer_font_weight = 400;
