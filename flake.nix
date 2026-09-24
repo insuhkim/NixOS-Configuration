@@ -41,17 +41,27 @@
         ${userName} = mkHome ./home;
         "${userName}@old-laptop" = mkHome ./home;
       };
+      nixOnDroidConfigurations.default = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import inputs.nixpkgs-stable { system = "aarch64-linux"; };
+        modules = [ ./droid ];
+      };
     };
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
 
-    home-manager-stable.url = "github:nix-community/home-manager/release-25.05";
+    home-manager-stable.url = "github:nix-community/home-manager/release-25.11";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.home-manager.follows = "home-manager-stable";
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
