@@ -18,7 +18,10 @@ in
     programs.noctalia.enable = true;
     programs.noctalia.recommendedServices.enable = true;
 
-    environment.systemPackages = with pkgs; [ capitaine-cursors ];
+    environment.systemPackages = with pkgs; [
+      wl-clipboard
+      capitaine-cursors
+    ];
 
     services.displayManager.noctalia-greeter = {
       enable = true;
@@ -31,5 +34,8 @@ in
         name = "capitaine-cursors";
       };
     };
+
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
   };
 }
