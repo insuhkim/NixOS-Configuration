@@ -77,7 +77,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 }

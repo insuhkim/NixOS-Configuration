@@ -62,44 +62,6 @@
         "type": "github"
       }
     },
-    "millennium": {
-      "inputs": {
-        "millennium-src": "millennium-src",
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "dir": "packages/nix",
-        "lastModified": 1789326337,
-        "narHash": "sha256-FWRCpoKQ8TywKkcCFleTSZRQhbL12JmbFdisaeIRIJU=",
-        "owner": "SteamClientHomebrew",
-        "repo": "Millennium",
-        "rev": "41f7356df31043e8c1429382dda95445530da987",
-        "type": "github"
-      },
-      "original": {
-        "dir": "packages/nix",
-        "owner": "SteamClientHomebrew",
-        "repo": "Millennium",
-        "type": "github"
-      }
-    },
-    "millennium-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1787082953,
-        "narHash": "sha256-zgr4cdJfye4qunpD3ClNnZ9D1WPGQAXV0CnYwEbB52s=",
-        "owner": "SteamClientHomebrew",
-        "repo": "Millennium",
-        "rev": "513b02e809b0eb120ecf0ae12e548798dd756323",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SteamClientHomebrew",
-        "repo": "Millennium",
-        "rev": "513b02e809b0eb120ecf0ae12e548798dd756323",
-        "type": "github"
-      }
-    },
     "nix-formatter-pack": {
       "inputs": {
         "nixpkgs": [
@@ -362,7 +324,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "home-manager-stable": "home-manager-stable",
-        "millennium": "millennium",
         "nix-index-database": "nix-index-database",
         "nix-on-droid": "nix-on-droid",
         "nixos-hardware": "nixos-hardware",
