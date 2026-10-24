@@ -30,15 +30,16 @@ in
     # CLI tools and fun utilities
     environment.systemPackages = with pkgs; [
       fortune cowsay lolcat figlet toilet nms scc smassh wiper yt-dlp
-      asciiquarium cbonsai cmatrix nyancat hollywood pipes peaclock cava
+      asciiquarium cbonsai cmatrix nyancat hollywood pipes peaclock cava tuxedo
       # sl # aalib # libcaca oneko
+      mpv
       blanket lowfi
       # kew # rmpc
 
       dust btop delta eza fastfetch fd fzf gh ripgrep tealdeer zellij
-      nixd nixfmt nix-output-monitor nh nix-tree devenv
+      nixd nixfmt nix-output-monitor nh nix-tree devenv nix-fast-build
       antigravity-cli github-copilot-cli
-      neovim helix
+      neovim helix jujutsu
     ];
   };
 }
