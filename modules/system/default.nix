@@ -10,5 +10,6 @@
     ./tailscale.nix
     ./variables.nix
     ./lix.nix
+    ./ttyd.nix
   ];
 }
