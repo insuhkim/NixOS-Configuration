@@ -1,33 +1,19 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.base.cli.terminal;
-in
-{
-  options.base.cli.terminal = {
-    enable = lib.mkEnableOption "terminal environment and CLI tools";
-  };
+{ ... }: {
+  flake.nixosModules.cli = { inputs, pkgs, ... }: {
+    imports = [ inputs.nix-index-database.nixosModules.default ];
+    programs.nix-index-database.comma.enable = true;
 
-  config = lib.mkIf cfg.enable {
     programs.bash = {
       enable = true;
       blesh.enable = true;
     };
 
-    programs.nix-index-database.comma.enable = true;
-
     programs.starship.enable = true;
-
     programs.zoxide.enable = true;
     programs.bat.enable = true;
     programs.yazi.enable = true;
     programs.lazygit.enable = true;
 
-    # CLI tools and fun utilities
     environment.systemPackages = with pkgs; [
       fortune cowsay lolcat figlet toilet nms scc smassh wiper yt-dlp
       asciiquarium cbonsai cmatrix nyancat hollywood pipes peaclock cava tuxedo

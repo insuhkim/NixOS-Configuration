@@ -1,13 +1,6 @@
-{ lib, config, ... }:
-let
-  cfg = config.base.system.power;
-in
+{ ... }:
 {
-  options.base.system.power = {
-    enable = lib.mkEnableOption "Enable power management";
-  };
-
-  config = lib.mkIf cfg.enable {
+  flake.nixosModules.power = { ... }: {
     powerManagement = {
       enable = true;
       powertop.enable = true;

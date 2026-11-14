@@ -1,50 +1,6 @@
 {
   description = "Insuh's NixOS configuration";
-
-  outputs =
-    inputs@{ nixpkgs, ... }:
-    let
-      system = "x86_64-linux";
-      userName = "insuhkim";
-
-      mkHost =
-        hostPath:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs userName; };
-          modules = [
-            hostPath
-            ./hosts/common.nix
-          ];
-        };
-
-      mkHome =
-        homePath:
-        inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          extraSpecialArgs = { inherit inputs userName; };
-          modules = [
-            homePath
-          ];
-        };
-
-    in
-    {
-      nixosConfigurations = {
-        old-laptop = mkHost ./hosts/old-laptop;
-      };
-      homeConfigurations = {
-        ${userName} = mkHome ./home;
-        "${userName}@old-laptop" = mkHome ./home;
-      };
-      nixOnDroidConfigurations.default = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-        pkgs = import inputs.nixpkgs-stable { system = "aarch64-linux"; };
-        modules = [ ./droid ];
-      };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -77,5 +33,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
 }

@@ -1,13 +1,6 @@
-{ lib, config, ... }:
-let
-  cfg = config.base.system.bluetooth;
-in
+{ ... }:
 {
-  options.base.system.bluetooth = {
-    enable = lib.mkEnableOption "Enable bluetooth";
-  };
-
-  config = lib.mkIf cfg.enable {
+  flake.nixosModules.bluetooth = { ... }: {
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;

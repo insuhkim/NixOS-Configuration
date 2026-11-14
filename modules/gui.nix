@@ -1,17 +1,16 @@
-{
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.base.gui.steam;
-in
-{
-  options.base.gui.steam = {
-    enable = lib.mkEnableOption "Enable steam";
-  };
+{ ... }: {
+  flake.nixosModules.gui = { pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
+      webcord
+      ferdium
+      readest
+    ];
 
-  config = lib.mkIf cfg.enable {
+    programs.localsend = {
+      enable = true;
+      openFirewall = true;
+    };
+
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

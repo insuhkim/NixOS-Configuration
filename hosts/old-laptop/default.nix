@@ -3,38 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules."lenovo-ideapad-slim-5"
-
-    ./../../modules
   ];
-
-  # Enable custom modules
-  base = {
-    system = {
-      boot.enable = true;
-      console.enable = true;
-      fonts.enable = true;
-      audio.pipewire.enable = true;
-      bluetooth.enable = true;
-      power.enable = true;
-      tailscale.enable = true;
-      envfs.enable = true;
-      lix.enable = true;
-    };
-    desktop = {
-      # kde.enable = true;
-      mango.enable = true;
-    };
-    gui = {
-      steam.enable = true;
-      webcord.enable = true;
-      readest.enable = true;
-      localsend.enable = true;
-      ferdium.enable = true;
-    };
-    cli = {
-      terminal.enable = true;
-    };
-  };
 
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";

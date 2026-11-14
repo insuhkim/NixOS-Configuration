@@ -1,41 +1,30 @@
+{ ... }:
 {
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.base.desktop.mango;
-in
-{
-  options.base.desktop.mango = {
-    enable = lib.mkEnableOption "Enable Mango Window Manager";
-  };
+  flake.nixosModules.mango =
+    { pkgs, ... }:
+    {
+      programs.mango.enable = true;
+      programs.noctalia.enable = true;
+      programs.noctalia.recommendedServices.enable = true;
 
-  config = lib.mkIf cfg.enable {
+      environment.systemPackages = with pkgs; [
+        wl-clipboard
+        capitaine-cursors
+      ];
 
-    programs.mango.enable = true;
-    programs.noctalia.enable = true;
-    programs.noctalia.recommendedServices.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      wl-clipboard
-      capitaine-cursors
-    ];
-
-    services.displayManager.noctalia-greeter = {
-      enable = true;
-      settings = {
-        cursor.size = 36;
-        keyboard.layout = "us";
+      services.displayManager.noctalia-greeter = {
+        enable = true;
+        settings = {
+          cursor.size = 36;
+          keyboard.layout = "us";
+        };
+        cursorTheme = {
+          package = pkgs.capitaine-cursors;
+          name = "capitaine-cursors";
+        };
       };
-      cursorTheme = {
-        package = pkgs.capitaine-cursors;
-        name = "capitaine-cursors";
-      };
+
+      services.gnome.gnome-keyring.enable = true;
+      security.pam.services.login.enableGnomeKeyring = true;
     };
-
-    services.gnome.gnome-keyring.enable = true;
-    security.pam.services.login.enableGnomeKeyring = true;
-  };
 }

@@ -1,16 +1,19 @@
+{ self, ... }:
 {
-  imports = [
-    ./audio.nix
-    ./bluetooth.nix
-    ./boot.nix
-    ./console.nix
-    ./envfs.nix
-    ./fonts.nix
-    ./power.nix
-    ./tailscale.nix
-    ./variables.nix
-    ./lix.nix
-    ./ttyd.nix
-    ./kmscon.nix
-  ];
+  flake.nixosModules.systems =
+    { ... }:
+    {
+      imports = with self.nixosModules; [
+        nix
+        audio
+        bluetooth
+        boot
+        power
+        fonts
+        kmscon
+        tailscale
+        ttyd
+        variables
+      ];
+    };
 }

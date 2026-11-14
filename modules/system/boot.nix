@@ -1,13 +1,6 @@
-{ lib, config, ... }:
-let
-  cfg = config.base.system.boot;
-in
+{ ... }:
 {
-  options.base.system.boot = {
-    enable = lib.mkEnableOption "Enable customized systemd-boot";
-  };
-
-  config = lib.mkIf cfg.enable {
+  flake.nixosModules.boot = { ... }: {
     boot = {
       # Bootloader.
       loader.systemd-boot.enable = true;
