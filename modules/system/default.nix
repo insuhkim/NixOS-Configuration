@@ -11,5 +11,6 @@
     ./variables.nix
     ./lix.nix
     ./ttyd.nix
+    ./kmscon.nix
   ];
 }
