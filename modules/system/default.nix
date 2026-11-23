@@ -14,6 +14,7 @@
         tailscale
         ttyd
         variables
+        user
       ];
     };
 }

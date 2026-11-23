@@ -1,12 +1,5 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  userName,
-  ...
-}:
-{
-  imports = [
-  ];
-
   # Core system settings that are always enabled when this module is imported
 
   # This value determines the NixOS release from which the default
@@ -28,19 +21,4 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # # Set default shell to ZSH
-  # users.defaultUserShell = pkgs.zsh;
-  # programs.zsh.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${userName} = {
-    isNormalUser = true;
-    description = userName;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = [ ];
-  };
 }

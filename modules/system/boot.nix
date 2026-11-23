@@ -4,9 +4,9 @@
     boot = {
       # Bootloader.
       loader.systemd-boot.enable = true;
-      loader.efi.canTouchEfiVariables = true;
-
       loader.systemd-boot.configurationLimit = 5;
+
+      loader.efi.canTouchEfiVariables = true;
 
       plymouth = {
         enable = true;
