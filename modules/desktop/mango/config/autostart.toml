@@ -1,0 +1,5 @@
+# Auto Start
+# Autostart your favorite applications here.
+
+[global]
+exec_once = ["noctalia &", "fcitx5 &"]

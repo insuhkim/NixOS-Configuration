@@ -7,16 +7,19 @@
         inherit pkgs;
         package = pkgs.mango;
         sourcedFiles = [
-          ./config/appearance.conf
-          ./config/autostart.conf
-          ./config/env.conf
-          ./config/input.conf
-          ./config/keybinds.conf
-          ./config/layout.conf
-          ./config/misc.conf
-          ./config/monitors.conf
-          ./config/rules.conf
+          ./config/appearance.toml
+          ./config/autostart.toml
+          ./config/env.toml
+          ./config/input.toml
+          ./config/keybinds.toml
+          ./config/layout.toml
+          ./config/misc.toml
+          ./config/monitors.toml
+          ./config/rules.toml
         ];
+        extraConfig = ''
+          source_optional=~/.config/mango/noctalia.conf
+        '';
       };
     in
     {

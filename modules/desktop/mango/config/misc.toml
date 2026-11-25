@@ -1,6 +1,7 @@
-# | Miscellaneous |
+# Miscellaneous
 # https://mangowm.github.io/docs/configuration/miscellaneous
 
+[global]
 allow_tearing = 2
 sync_obj_enable = 1
 # xwayland-persistence = 1

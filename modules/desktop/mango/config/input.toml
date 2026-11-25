@@ -1,13 +1,13 @@
-# | Input Devices |
-# Configure your input devices here. | https://mangowm.github.io/docs/configuration/input
+# Input Devices
+# https://mangowm.github.io/docs/configuration/input
 
+[global]
 # Keyboard Settings
-repeat_rate=40
-repeat_delay=400
-numlock_on=0
-xkb_rules_layout=us
-xkb_rules_options=caps:escape,ctrl:nocaps
-
+repeat_rate = 40
+repeat_delay = 400
+numlock_on = 0
+xkb_rules_layout = "us"
+xkb_rules_options = "caps:escape,ctrl:nocaps"
 
 # Mouse Settings
 mouse_natural_scrolling = 0
