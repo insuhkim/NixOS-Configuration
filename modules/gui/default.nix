@@ -6,6 +6,7 @@
       imports = with self.nixosModules; [
         kitty
         zen-browser
+        wine
       ];
 
       environment.systemPackages = with pkgs; [
