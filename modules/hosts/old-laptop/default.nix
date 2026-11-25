@@ -8,9 +8,6 @@ in
     modules = with self.nixosModules; [
       gui
       cli
-      starship
-      git
-      jujutsu
       mango
       fcitx5
       systems
