@@ -10,6 +10,7 @@ _: {
       nixpkgs.config.allowUnfree = true;
 
       nix.optimise.automatic = true;
+      nix.settings.auto-optimise-store = true;
       services.envfs.enable = true;
       nix.gc = {
         automatic = true;
