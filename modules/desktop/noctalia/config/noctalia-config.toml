@@ -1,0 +1,176 @@
+[bar]
+order = [ "top_bar", "left_bar" ]
+
+    [bar.left_bar]
+    background_opacity = 0.8
+    center = [ "group:g1" ]
+    enabled = true
+    end = []
+    position = "left"
+    scale = 1.15
+    start = []
+    thickness = 35
+
+        [[bar.left_bar.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_container"
+        id = "g1"
+        members = [ "active_window", "btn", "workspaces", "taskbar" ]
+        opacity = 0.0
+        padding = 6.0
+
+    [bar.top_bar]
+    background_opacity = 0.6
+    center = [ "group:g3", "group:g2" ]
+    end = [
+        "tray",
+        "notifications",
+        "clipboard",
+        "network",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "battery",
+        "control-center",
+        "session"
+    ]
+    reserve_space = false
+    scale = 1.4
+    smart_auto_hide = true
+    start = [ "group:g1", "weather" ]
+    thickness = 50
+
+        [[bar.top_bar.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_container"
+        id = "g1"
+        members = [ "date", "clock" ]
+        opacity = 0.6
+        padding = 6.0
+
+        [[bar.top_bar.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_container"
+        id = "g2"
+        members = [ "media", "audio_visualizer" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.top_bar.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "surface_container"
+        id = "g3"
+        members = [ "cat", "cpu" ]
+        opacity = 1.0
+        padding = 6.0
+
+[battery]
+warning_threshold = 30
+
+[bluetooth]
+connect_when_enabled = true
+connection_notifications = true
+
+[dock]
+active_monitor_only = true
+enabled = true
+launcher_position = "end"
+position = "right"
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blurred_desktop = true
+
+[plugin_settings."ezequiel/mango_layouts"]
+panel_open_near_click = true
+panel_placement = "attached"
+
+[plugins]
+enabled = [
+    "noctalia/screen_recorder",
+    "noctalia/translator",
+    "noctalia/notes",
+    "noctalia/wallhaven",
+    "noctalia/kaomoji",
+    "noctalia/timer",
+    "noctalia/wallpaper_depth",
+    "ezequiel/mango_layouts",
+    "dotnetrob/cat",
+    "icefish/phone-connect",
+    "alexander/screen-toolkit",
+    "yuuto/calculator"
+]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+launch_apps_as_systemd_services = true
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+show_close_buttons = false
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    session_search = true
+    show_app_actions = true
+
+        [shell.launcher.providers.panels]
+        global = true
+
+    [shell.screen_corners]
+    enabled = true
+
+[theme]
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "vibrant"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "kcolorscheme", "kitty", "mango", "qt" ]
+    community_ids = [
+        "qutebrowser",
+        "zen-browser",
+        "lazyvim",
+        "libreoffice",
+        "neovim",
+        "obsidian",
+        "zed",
+        "fastfetch",
+        "obs",
+        "zellij",
+        "fcitx5",
+        "bat",
+        "fzf",
+        "lazygit",
+        "starship",
+        "yazi"
+    ]

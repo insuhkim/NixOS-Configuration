@@ -2,4 +2,4 @@
 # Autostart your favorite applications here.
 
 [global]
-exec_once = ["noctalia &", "fcitx5 &"]
+exec_once = ["fcitx5 &"]

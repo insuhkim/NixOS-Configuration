@@ -1,0 +1,18 @@
+[wallpaper.default]
+path = "/home/insuhkim/Pictures/Wallpapers/wallhaven-9mjoy1.png"
+
+[wallpaper.last]
+path = "/home/insuhkim/Pictures/Wallpapers/wallhaven-9mjoy1.png"
+
+[wallpaper.monitors.DP-1]
+path = "/home/insuhkim/Pictures/Wallpapers/wallhaven-9mjoy1.png"
+
+[wallpaper.monitors.HDMI-A-1]
+path = "/home/insuhkim/Pictures/Wallpapers/wallhaven-9mjoy1.png"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/insuhkim/Pictures/Wallpapers/wallhaven-9mjoy1.png"
+
+[[wallpaper.favorite]]
+path = "/home/insuhkim/Pictures/Wallpapers/wallhaven-9mjoy1.png"
+theme_mode = "auto"
