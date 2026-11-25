@@ -1,6 +1,5 @@
-{ ... }:
-{
-  flake.nixosModules.boot = { ... }: {
+_: {
+  flake.nixosModules.boot = _: {
     boot = {
       # Bootloader.
       loader.systemd-boot.enable = true;

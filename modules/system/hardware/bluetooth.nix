@@ -1,6 +1,5 @@
-{ ... }:
-{
-  flake.nixosModules.bluetooth = { ... }: {
+_: {
+  flake.nixosModules.bluetooth = _: {
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -10,9 +9,9 @@
           # Bluetooth adapters. Defaults to 'false'.
           Experimental = true;
 
-          # # When enabled other devices can connect faster to us, however
-          # # the tradeoff is increased power consumption. Defaults to
-          # # 'false'.
+          # When enabled other devices can connect faster to us, however
+          # the tradeoff is increased power consumption. Defaults to
+          # 'false'.
           # FastConnectable = true;
         };
       };

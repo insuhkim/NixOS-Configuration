@@ -1,20 +1,15 @@
 { self, ... }:
 {
-  flake.nixosModules.systems =
-    { ... }:
-    {
-      imports = with self.nixosModules; [
-        nix
-        audio
-        bluetooth
-        boot
-        power
-        fonts
-        kmscon
-        tailscale
-        ttyd
-        variables
-        user
-      ];
-    };
+  flake.nixosModules.systems = _: {
+    imports = with self.nixosModules; [
+      core
+      audio
+      bluetooth
+      power
+      kmscon
+      tailscale
+      ttyd
+      openssh
+    ];
+  };
 }

@@ -1,7 +1,6 @@
-{ ... }:
-{
+_: {
   flake.nixosModules.user =
-    { ... }:
+    _:
     let
       userName = "insuhkim";
     in
@@ -12,7 +11,6 @@
         description = userName;
         initialPassword = "password";
         extraGroups = [
-          # "root"
           "networkmanager"
           "wheel"
         ];

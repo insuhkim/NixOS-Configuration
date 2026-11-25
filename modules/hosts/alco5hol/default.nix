@@ -8,8 +8,7 @@ in
     modules = with self.nixosModules; [
       gui
       cli
-      mango
-      fcitx5
+      desktop
       systems
       alco5hol-configuration
     ];
