@@ -7,6 +7,7 @@
         kitty
         zen-browser
         wine
+        spotify
       ];
 
       environment.systemPackages = with pkgs; [
