@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.old-laptopConfiguration =
+  flake.nixosModules.alco5hol-configuration =
     { inputs, pkgs, ... }:
     {
       imports = [
@@ -28,7 +28,7 @@
         KillUserProcesses = false;
       };
 
-      networking.hostName = "old-laptop"; # Define your hostname.
+      networking.hostName = "alco5hol"; # Define your hostname.
       # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
       # Configure network proxy if necessary

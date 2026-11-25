@@ -3,7 +3,7 @@ let
   userName = "insuhkim";
 in
 {
-  flake.nixosConfigurations.old-laptop = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.alco5hol = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs userName; };
     modules = with self.nixosModules; [
       gui
@@ -11,7 +11,7 @@ in
       mango
       fcitx5
       systems
-      old-laptopConfiguration
+      alco5hol-configuration
     ];
   };
 }

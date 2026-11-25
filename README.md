@@ -6,7 +6,7 @@ A modular, Flake-based NixOS and standalone Home Manager configuration.
 
 | Host | Hardware | Desktop Environment | Purpose |
 | --- | --- | --- | --- |
-| `old-laptop` | Lenovo IdeaPad Slim 5 | Mango WM / Noctalia | Laptop |
+| `alco5hol` | Lenovo IdeaPad Slim 5 | Mango WM / Noctalia | Laptop |
 
 ## Structure
 
@@ -16,7 +16,7 @@ A modular, Flake-based NixOS and standalone Home Manager configuration.
 ├── flake.lock             # Pinned flake inputs
 ├── hosts/
 │   ├── common.nix         # Shared system configuration across all hosts
-│   └── old-laptop/        # Host configuration for Lenovo IdeaPad Slim 5
+│   └── alco5hol/        # Host configuration for Lenovo IdeaPad Slim 5
 ├── modules/
 │   ├── cli/               # Command-line tools, terminal utilities, shell
 │   ├── gui/               # GUI applications (Steam, WebCord, Readest, LocalSend)
@@ -49,7 +49,7 @@ A modular, Flake-based NixOS and standalone Home Manager configuration.
 Rebuild the system configuration:
 
 ```bash
-sudo nixos-rebuild switch --flake .#old-laptop
+sudo nixos-rebuild switch --flake .#alco5hol
 ```
 
 ### Home Manager
@@ -63,7 +63,7 @@ home-manager switch --flake .#insuhkim
 Or target host-specific definition:
 
 ```bash
-home-manager switch --flake .#insuhkim@old-laptop
+home-manager switch --flake .#insuhkim@alco5hol
 ```
 
 ### Nix-on-Droid
