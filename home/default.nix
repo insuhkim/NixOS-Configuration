@@ -8,27 +8,18 @@
 
   imports = [
     ./dotfiles
-    ./git.nix
-    ./terminal
+    ./gh.nix
     ./zed.nix
-    ./obsidian.nix
     ./zen-browser.nix
-    ./plasma-manager.nix
   ];
 
   # Enable custom Home Manager modules
   myHome = {
     programs = {
-      git.enable = true;
       zed.enable = true;
-      obsidian.enable = true;
-      kitty.enable = true;
       zenBrowser.enable = true;
     };
-    desktop.plasma.enable = true;
   };
-
-  programs.antigravity-cli.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

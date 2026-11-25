@@ -1,9 +1,29 @@
 { ... }:
 {
   flake.nixosModules.mango =
-    { pkgs, ... }:
+    { inputs, pkgs, ... }:
+    let
+      mangoPackage = inputs.nix-wrapper-modules.wrappers.mangowc.wrap {
+        inherit pkgs;
+        package = pkgs.mango;
+        sourcedFiles = [
+          ./config/appearance.conf
+          ./config/autostart.conf
+          ./config/env.conf
+          ./config/input.conf
+          ./config/keybinds.conf
+          ./config/layout.conf
+          ./config/misc.conf
+          ./config/monitors.conf
+          ./config/rules.conf
+        ];
+      };
+    in
     {
-      programs.mango.enable = true;
+      programs.mango = {
+        enable = true;
+        package = mangoPackage;
+      };
       programs.noctalia.enable = true;
       programs.noctalia.recommendedServices.enable = true;
 

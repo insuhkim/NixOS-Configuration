@@ -8,9 +8,18 @@ in
     inherit system;
     specialArgs = { inherit inputs userName; };
     modules = [
-      ../hosts/old-laptop
-      ../hosts/common.nix
+      ../../hosts/old-laptop
+      ../../hosts/common.nix
     ]
-    ++ (with self.nixosModules; [ gui cli mango fcitx5 systems ]);
+    ++ (with self.nixosModules; [
+      gui
+      cli
+      starship
+      git
+      jujutsu
+      mango
+      fcitx5
+      systems
+    ]);
   };
 }

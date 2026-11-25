@@ -11,7 +11,7 @@ in
         config.allowUnfree = true;
       };
       extraSpecialArgs = { inherit inputs userName; };
-      modules = [ ../home ];
+      modules = [ ../../home ];
     };
 
     "${userName}@old-laptop" = inputs.home-manager.lib.homeManagerConfiguration {
@@ -20,7 +20,7 @@ in
         config.allowUnfree = true;
       };
       extraSpecialArgs = { inherit inputs userName; };
-      modules = [ ../home ];
+      modules = [ ../../home ];
     };
   };
 }
