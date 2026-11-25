@@ -11,16 +11,7 @@ in
         config.allowUnfree = true;
       };
       extraSpecialArgs = { inherit inputs userName; };
-      modules = [ ../../home ];
-    };
-
-    "${userName}@old-laptop" = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      extraSpecialArgs = { inherit inputs userName; };
-      modules = [ ../../home ];
+      modules = [ ./_home ];
     };
   };
 }
