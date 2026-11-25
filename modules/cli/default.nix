@@ -8,23 +8,10 @@
         git
         jujutsu
         yazi
+        bash
       ]
       ++ [ inputs.nix-index-database.nixosModules.default ];
     programs.nix-index-database.comma.enable = true;
-
-    programs.bash = {
-      enable = true;
-      blesh.enable = true;
-      shellAliases = {
-        optimise = "nix-store --optimise -vv";
-        zed = "zeditor";
-        ls = "eza --icons";
-        lt = "eza --icons --tree --level=2";
-        ff = "fastfetch";
-        cat = "bat";
-        cd = "z";
-      };
-    };
 
     programs.zoxide.enable = true;
     programs.bat.enable = true;
